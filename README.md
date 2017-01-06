@@ -1,3 +1,4 @@
+![swockets logo](https://raw.githubusercontent.com/snoato/swockets/master/misc/swockets_logo.png?token=AD5ZmkafiqEmBRyd8YXw2TP0ks0IULmXks5YeQu9wA%3D%3D)
 # swockets
 swockets is a socket wrapper library intended to make it easy to set up a server and corresponding clients, while still giving the user of the library room for individualizing.
 
@@ -9,4 +10,4 @@ With the use of your own handler you can insert your own code at various places.
 swockets is available for Python (2.7), C# (mono compatible) and will be released for Rust. 
 
 ##Usage
-<todo>
+!todo!
