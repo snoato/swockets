@@ -1,0 +1,6 @@
+/Users/danielmaximilianswoboda/Projects/swockets.NET/swockets.NET/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/danielmaximilianswoboda/Projects/swockets.NET/swockets.NET/bin/Debug/swockets.NET.exe.mdb
+/Users/danielmaximilianswoboda/Projects/swockets.NET/swockets.NET/bin/Debug/swockets.NET.exe
+/Users/danielmaximilianswoboda/Projects/swockets.NET/swockets.NET/obj/x86/Debug/swockets.NET.exe
+/Users/danielmaximilianswoboda/Projects/swockets.NET/swockets.NET/obj/x86/Debug/swockets.NET.exe.mdb
+/Users/danielmaximilianswoboda/Projects/swockets.NET/swockets.NET/bin/Debug/Newtonsoft.Json.dll
