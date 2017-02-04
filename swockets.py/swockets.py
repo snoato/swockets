@@ -40,6 +40,9 @@ class SwocketHandler(object):
 	def disconnect(self, sock = None):
 		print "disconnect"
 
+	def connect(self, sock):
+		print "connect"
+
 	def handshake_unsuccessful(self):
 		print "handshake unsuccessful"
 
@@ -53,6 +56,7 @@ class swockets:
 	def __init__(self, mode, handler, host=None, port=6666, backlog=1):
 		self.handler = handler
 		self.mode = mode
+		self.handler.sock = self
 
 		if mode == swockets.ISSERVER:
 			self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -96,6 +100,7 @@ class swockets:
 			client.sock = clientsocket
 			client.address = address
 			self.clients.append(client)
+			self.handler.connect(clientsocket)
 
 			thread.start_new_thread(self.receive_thread, (client, client.sock))
 		else:
@@ -105,6 +110,7 @@ class swockets:
 	#client negotiating function
 	def client_negotiate(self):
 		if self.handler.handshake(self.sock):
+			self.handler.connect(self.sock)
 			thread.start_new_thread(self.receive_thread, (self.sock, self.sock))
 		else:
 			self.sock.close()
