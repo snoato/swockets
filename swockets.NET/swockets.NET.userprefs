@@ -1,9 +1,5 @@
 ﻿<Properties StartupConfiguration="{1211CC1D-A06C-44E6-9097-1B87CEB790FF}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="swockets.NET/Swockets.cs">
-    <Files>
-      <File FileName="swockets.NET/Swockets.cs" Line="24" Column="34" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

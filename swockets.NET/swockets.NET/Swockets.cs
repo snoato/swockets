@@ -52,6 +52,14 @@ namespace swockets
 		}
 
 		/*
+		 *
+		 */
+		public void connect(SwocketClientSocket sock = null)
+		{
+			Console.WriteLine("connect");
+		}
+
+		/*
 		 * 
 		 */
 		public void disconnect(SwocketClientSocket sock = null)
@@ -154,7 +162,7 @@ namespace swockets
 			if (handler.handshake(clientsocket))
 			{
 				SwocketClientSocket client = new SwocketClientSocket(clientsocket, address);
-
+				handler.connect(client);
 				clients.Add(client);
 
 				Thread t = new Thread(() => receive_thread(clientsocket, client));
@@ -174,6 +182,7 @@ namespace swockets
 		{
 			if (handler.handshake(sock))
 			{
+				handler.connect(new SwocketClientSocket(sock, ""));
 				Thread t = new Thread(() => receive_thread(sock));
 				t.Start();
 			}
