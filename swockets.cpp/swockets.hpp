@@ -31,24 +31,24 @@ public:
 
 	Swockets *swocket;
 	
-	bool handshake(int sock) {
+	virtual bool handshake(int sock) {
 		std::cout << "handshaking" << std::endl;
 		return true;
 	}
 
-	void recv(nlohmann::json recvObj) {
+	virtual void recv(nlohmann::json recvObj) {
 		std::cout << recvObj << std::endl;
 	}
 
-	void disconnect() {
+	virtual void disconnect() {
 		std::cout << "disconnected" << std::endl;
 	}
 
-	void connect(int sock) {
+	virtual void connect(int sock) {
 		std::cout << "connected" << std::endl;
 	}
 
-	void handshake_unsuccessful() {
+	virtual void handshake_unsuccessful() {
 		std::cout << "handshake unsuccessful" << std::endl;
 	}
 };
