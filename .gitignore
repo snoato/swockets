@@ -10,3 +10,7 @@
 *.exe
 
 *.userprefs
+
+*.out
+
+*.pyc
