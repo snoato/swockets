@@ -35,6 +35,7 @@ namespace swockets
 
 	public class SwocketHandler
 	{
+		public Swockets swocket = null;
 		/*
 		 * 
 		 */
@@ -94,6 +95,7 @@ namespace swockets
 		{
 			this.mode = mode;
 			this.handler = handler;
+			this.handler.swocket = this;
 
 
 			//initialize as Swockets Server
