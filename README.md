@@ -7,7 +7,7 @@ swockets is created to send and receive JSON messages encoded as UTF8 strings. s
 With the use of your own handler you can insert your own code at various places. You can add the handshake of your own protocol, write functions that are executed whenever a message is received, a client disconnects, connection drops and when the handshake is unsuccessful. 
 
 ##Availablity
-swockets is available for Python (2.7), C# (mono compatible) and will be released for Rust. 
+swockets is available for Python (2.7), C# (mono compatible), C++ (only in client mode) and will be released for Rust, Ruby and Swift. 
 
 ##Usage
 !todo!
