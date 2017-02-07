@@ -150,23 +150,6 @@ public:
 			std::string part = sendStr.substr(i*1024,1024);
 			::send(sock, part.c_str(), 1024, 0);
 		}
-
-
-	    /*char* message = (char*)malloc(1024);
-	    strcpy(message, msg);
-	    for(i=lenghtOfMsg; i<1024; i++){
-	        message[i] = ' ';
-	    }
-	    message[1024] = '\0';
-	    if (send(sock, message, lenghtOfMsg, 0) == -1) {
-	        perror("send_error");
-	        running = false;
-	    }
-	    free(message);
-	    message = 0;*/
-
-		//send(sock, buf, len, flags);
-
 	}
 
 	~Swockets(){}
