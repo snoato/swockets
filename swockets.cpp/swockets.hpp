@@ -133,7 +133,11 @@ public:
 		}
 	}
 
-	nlohmann::json receive(int sock) {
+	nlohmann::json receive(int sock = -1) {
+		if (mode_ == SwocketMode::ISCLIENT) {
+			sock = sock_;
+		}
+		
 		return receive_one_message(sock);
 	}
 
