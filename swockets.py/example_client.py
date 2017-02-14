@@ -3,7 +3,7 @@ import thread
 
 class BasicHandler(SwocketHandler):
 	def __init__(self):
-		SwocketBasicHandler.__init__(self)
+		SwocketHandler.__init__(self)
 		self.connected = True
 
 	def disconnect(self):
