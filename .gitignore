@@ -16,3 +16,5 @@
 *.pyc
 
 *.pyc
+
+swockets.py/swockets.pyc
