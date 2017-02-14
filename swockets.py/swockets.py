@@ -5,7 +5,7 @@ swockets by Daniel Swoboda (@snoato, swobo.space)
 """
 
 import socket
-import thread
+import threading
 import json
 import select
 import sys
@@ -65,7 +65,9 @@ class swockets:
 			self.sock.listen(backlog)
 			self.clients = []
 
-			thread.start_new_thread(self.server_connection_thread, ())
+			t=threading.Thread(target=self.server_connection_thread, args=())
+			t.daemon = True  
+			t.start()
 
 		elif mode == swockets.ISCLIENT:
 			self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -102,7 +104,9 @@ class swockets:
 			self.clients.append(client)
 			self.handler.connect(clientsocket)
 
-			thread.start_new_thread(self.receive_thread, (client, client.sock))
+			t=threading.Thread(target=self.receive_thread, args=(client, client.sock))
+			t.daemon = True  
+			t.start()
 		else:
 			clientsocket.close()
 			self.handler.handshake_unsuccessful()
@@ -111,7 +115,9 @@ class swockets:
 	def client_negotiate(self):
 		if self.handler.handshake(self.sock):
 			self.handler.connect(self.sock)
-			thread.start_new_thread(self.receive_thread, (self.sock, self.sock))
+			t=threading.Thread(target=self.receive_thread, args=(self.sock, self.sock))
+			t.daemon = True  
+			t.start()
 		else:
 			self.sock.close()
 			self.handler.handshake_unsuccessful()
