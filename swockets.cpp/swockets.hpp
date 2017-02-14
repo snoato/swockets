@@ -57,7 +57,6 @@ class Swockets
 {
 private:
 	enum SwocketMode mode_;
-	SwocketHandler *handle_;
 	bool RUNNING = true;
 	int sock_;
 	std::thread receive_thread_;
@@ -105,6 +104,7 @@ private:
 		}
 	}
 public:
+	SwocketHandler *handle_;
 	Swockets(SwocketMode mode, SwocketHandler *handle, std::string host, int port = 6666, int backlog = 1) {
 		mode_ = mode;
 		handle_ = handle;
@@ -131,6 +131,11 @@ public:
 
 			client_negotiate();
 		}
+	}
+
+	void stop() {
+		RUNNING = false;
+		close(sock);
 	}
 
 	nlohmann::json receive(int sock = -1) {
